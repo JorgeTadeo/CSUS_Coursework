@@ -9,7 +9,7 @@
   * Prolog
 # [CSC 137 - Computer Organization]()
 # [CSC 138 - Computer Networks and Internets]()
-# [CSC 139 - Operating System Principles]()
+# [CSC 139 - Operating System Principles](https://github.com/diaoshen/CSUS_Coursework/tree/master/CSC%20139)
 # [CSC 140 - Advanced Algorithm Design and Analysis]()
 # [CSC 152 - Cryptography]()
 # [CSC 153 - Computer Forensics Principles and Practices](https://github.com/diaoshen/CSUS_Coursework/tree/master/CSC%20153)
