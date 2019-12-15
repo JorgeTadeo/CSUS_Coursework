@@ -1,0 +1,65 @@
+LCS(x,y) = {
+			  1+LCS(x-1,y-1)                if xi = yi 
+			  Max(LCS(x,y-1) , LCS(x-1,y)   if x1 != yi 
+		    }
+			
+def LCS_TOP(x,y):
+	n = len(x)
+	m = len(y)
+	t = [[-1 for i in range(m+1)] for j in range(n+1)] 
+	for i in range(n+1):
+		t[0][i] = 0
+		t[i][0] = 0
+	return LCS_helper(x,y,t)
+
+def LCS_helper(x,y,t):
+	n = len(x)
+	m = len(y)
+	if t[n][m] >= 0:
+		return t[n][m]
+	res = 0 
+	if x[-1] == y[-1]:
+		res = 1 + LCS_helper(x[:-1],y[:-1],t)
+	else:
+		res = max(LCS_helper(x[:-1],y,t),LCS_helper(x,y[:-1],t))
+	t[n][m] = res 
+	return res 
+
+	
+		
+LCS_BOTTOM_WITH_PATH_SAVING(X,Y)
+	m=X.length , n=Y.length
+	Create 2D array t[n+1,m+1] 
+	Fill in 0's for 1st row and 1st rolumn 
+	for i = 1 to m 
+		for j = 1 to n 
+			if X[i] == Y[i]
+				t[i][j] = t[i-1][j-1] + 1 
+			else
+				t[i][j] = max(t[i-1][j] , t[i][j-1] 
+	return t[n][m] 
+	
+printPath(x,y,t)
+	m = x.len , n = y.len
+	String s 
+	i = m , j = n 
+	while(i>= 1 && j>= 1)
+		if X[i]==Y[i] 
+			s += X[i] 
+			i-- , j-- 
+		elseif t[i-1][j] >= t[i][j-1] 
+			i-- 
+		else
+			j-- 
+	return s 
+
+			
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 1, 1, 1]
+[0, 1, 1, 1, 1, 2, 2]
+[0, 1, 1, 2, 2, 2, 2]
+[0, 1, 1, 2, 2, 3, 3]
+[0, 1, 2, 2, 2, 3, 3]
+[0, 1, 2, 2, 3, 3, 4]
+[0, 1, 2, 2, 3, 4, 4]	
+	

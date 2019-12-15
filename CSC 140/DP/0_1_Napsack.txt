@@ -1,0 +1,27 @@
+ v = array of value of items 
+ w = array of item weights 
+ n = number of items 
+ c = capacity 
+ t = lookup table 
+	t[i][j] = optimal value for c=j using items 1,2,...i 
+
+O(nc)
+ napsack(w,v,n,c)
+	create 2D array t with n+1 rows , c+1 columns 
+	for j = 0 to c
+		t[0][j] = 0 //first row with 0's
+	for i = 1 to n  // 1...i = item number 
+		for j = 0 to c // j = capacity 
+			if w[i] > j //doesnt fit 
+				t[i][j] = t[t-1][j] //take sol from prev row
+			else //fits 
+				t[i][j] = max(v[i]+t[i-1][j-w[i]] , t[i-1][j])
+	return t[n][c]
+
+O(n)
+	i = n , j = c 
+	for i = n down to 1 
+		if t[i][j] > t[i-1][j]
+			take item i 
+			j = j - w[i]
+	

@@ -1,0 +1,150 @@
+Longest Substring 
+
+""" 
+	TOP DOWN 
+
+	LCS(X,Y) = MAX {LCS_Helper(X-i,Y-i),LCS_Helper(X,Y-i),LCS_Helper(Y-i,X)}
+			0<i<X.len
+
+	LCS_Helper(X,Y) = { 
+	1+LCS_Helper(X-1,Y-1) , if Xi=Yi
+			0      , if Xi != Yi 
+	}
+
+"""
+def LCS_TOP(x,y):
+	
+	m = len(x)
+	n = len(y)
+	t = [[-1 for i in range(m+1)] for j in range(n+1)] 
+	for i in range(m+1):
+		t[0][i] = 0
+	for i in range(n+1):
+		t[i][0] = 0
+
+	res = 0
+	maxI = 0
+	for i in range(0,m+1):
+		if i >= m:
+			flag = 1
+		else:
+			flag = 0
+
+		old = res 
+		res = max(res,(LCS_helper(x[:m-i],y[:n-i],t,0)))
+		if res > old:
+			maxI = m-i
+
+		old = res
+		res = max(res,(LCS_helper(x[:m-i-1],y[:n-i],t,0)))
+		if res > old:
+			maxI = m-i-1
+
+		old = res
+		res = max(res,LCS_helper(x[:m-i],y[:n-i-1],t,flag))
+		if res > old:
+			maxI = m-i
+
+	print(x)
+	print(y)
+	print("\n")
+	print("LCS  (", maxI-res+1 , maxI , ")")
+	s = ""
+	for i in range(1,res+1):
+		s = x[maxI-i] + s
+	print("Substring : ", s)
+	return res
+
+
+def LCS_helper(x,y,t,flag):
+
+	if flag == 1:
+		for row in t:
+			print(row)	
+		print("\n")
+
+	m = len(x)
+	n = len(y)
+	if t[n][m] != -1:
+		return t[n][m]
+
+	if x[-1] == y[-1]:
+		res = 1 + LCS_helper(x[:-1],y[:-1],t,0)
+	else:
+		res = 0
+
+	t[n][m] = res 
+	return res
+
+
+
+
+"""
+	BOTTOM-UP
+
+	LCS(X,Y) = { 
+				1+LCS(X-1,Y-1) , if Xi=Yi
+						0      , if Xi != Yi 
+				}
+"""
+
+def LCS_BOTTOM(x,y):
+	n = len(x)
+	m = len(y) 
+	t = [[0 for i in range(m+1)] for j in range(n+1)] 
+	maxI = 0
+	maxJ = 0
+	maxLCS = 0
+	for i in range(1,n+1):
+		for j in range(1,m+1):
+			if x[i-1] == y[j-1]:
+				t[i][j] = 1 + t[i-1][j-1]
+				if t[i][j] > maxLCS:
+					maxLCS = t[i][j]
+					maxI = i  
+					maxJ = j 
+				
+	for row in t: 
+			print(row)
+	print("\n")
+	return maxLCS , maxI
+
+
+
+
+
+
+
+def main():
+
+	x = "EBAAAAEC"
+	y = "BAAAAC"
+
+	#ans = LCS_TOP(x,y) 
+	#print("LCS  = " , ans)
+	#print("\n")
+
+	ans, loc = LCS_BOTTOM(x,y)
+	print(x[loc-ans:ans+1])
+
+
+main()
+
+
+OUTPUT:
+[0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, -1, 1, 0, 0, -1, -1, -1, -1]
+[0, -1, -1, 2, 1, 1, -1, -1, -1]
+[0, -1, -1, -1, 3, 2, 2, -1, -1]
+[0, 0, -1, -1, -1, 4, 3, 0, -1]
+[0, 0, 0, -1, -1, -1, 5, 0, 0]
+[0, -1, -1, -1, -1, -1, -1, 0, 1]
+
+EBAAAAEC
+BAAAAC
+
+
+LCS  ( 2 6 )Substring :  BAAAA
+LCS  =  5
+
+

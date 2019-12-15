@@ -1,0 +1,69 @@
+"""
+ base case : p(n,n) = n!  , p(n,1) = n 
+ p(n,k) = p(n-1,k) + k*p(n-1,k-1)
+"""
+
+def factorial(n):
+	if n == 1:
+		return 1
+	else:
+		return n*factorial(n-1)
+
+def permutation_top(n,k):
+	if n == k:
+		return factorial(n)
+	if k == 1:
+		return n
+	
+	return permutation_top(n-1,k) + k*permutation_top(n-1,k-1)
+	
+
+def permutation_bottom(n,k):
+	t = [[0 for i in range(k+1)] for j in range(n+1)] 
+	for i in range(1,n+1):
+		t[i][1] = i
+	for i in range(1,n+1):
+		for j in range(2,k+1):
+			if i == j:
+				t[i][j] = factorial(i)
+			else:
+				t[i][j] = t[i-1][j] + j*t[i-1][j-1]
+	for row in t:
+		print(row)
+
+
+
+
+
+
+def main():
+
+	print(permutation_top(5,3))
+	permutation_bottom(5,3)
+
+main()
+
+
+
+
+
+""" 
+ p(n,k) = p(n-1,k) + k*p(n-1,k-1)
+
+ 123 
+
+ 12
+ 21
+
+ 13
+ 23
+
+ 31
+ 23 
+
+
+ p(3,2) = p(2,2) + p(2,1)*2 
+        =  2 + 2*2
+		= 2 + 4  = 6 
+
+"""
