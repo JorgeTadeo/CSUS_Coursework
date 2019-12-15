@@ -1,0 +1,90 @@
+                                            Final Review
+
+Scope
+	All materials discussed during this semester, although materials discussed in the second half of the semester will be emphasized more
+
+Question types
+    Single or Multiple choices
+    Short answer
+    Algorithm analysis (time and space)
+    Writing algorithm for a given problem
+
+Analysis of algorithm
+    Asymptotic Notations
+    Best-case, average-case, worst-case
+    Be able to provide time and space analysis for an given algorithm
+
+Memory of a process
+    What are the four sections? (code, data, heap, stack)  What does each section contain?
+    Understand function call and stack-based memory allocation
+
+Recursion
+    Divide and conquer
+    Base case
+    Recursive vs. iterative approach, every recursive method can be implemented iteratively
+    Consider stack-based memory allocation in space analysis
+
+Sorting Algorithms
+    merge sort, quick sort, heap sort, count sort, radix sort
+    Sorting algorithm implementation & application, performance analysis and comparison
+
+Symbol Tables
+    A.K.A: Associated Array, Dictionary, Map
+    Important operations: search, insertion, deletion
+    Type: unordered, ordered
+    Implementations
+        Binary search tree (BST): key order constraint, getMin, getMax, getHeight, select, deleteMin, delete, traversal
+        2-3 search tree, 2-3 tree, 2-3 tree search & insertion
+        Red-black BST: relationship between red-black BST and 2-3 tree, search & insertion
+        Hashing with separate chaining
+        Hashing with linear probing: with/without resizing
+    Symbol table implementation performance comparison
+
+Graph
+    Adjacency matrix and adjacency list representation
+    Graph traversal: Depth First Search (DFS), Breadth First Search (BFS)
+    Graph algorithms and their performance analysis
+
+    Undirected graph
+        Degree of a vertex, path, path length, self-loop, parallel edges, connected graph, acyclic graph, sparse graph, dense graph, bipartite graph
+        Problems: connectivity, paths, shortest paths, cycle detection, two colorable
+
+    Directed graph (Digraph)
+        Outdegree and indegree of a vertex, graph's reverse, Directed Acyclic Graph (DAG)
+        Problems: reachability, directed paths, shortest directed paths, directed cycle detection, topological sort
+		Excluded topics: strong connectivity, Kosaraju's Algorithm
+
+    Undirected edge-weighted graph
+        Spanning tree, weight of a spanning tree, Minimum Spanning Tree (MST), cut of a graph, crossing edges of a cut
+        Lazy Prim's MST and Kruskal's MST algorithms
+		Excluded topics: Eager Prim's MST
+
+    Edge-weighted digraph
+        Dijkstra's shortest path algorithm: assuming edge  weights are non-negative
+        Bellman-Ford Algorithm: assuming no negative cycle reachable from the source vertex
+	    Network Max-Flow problem: source, sink, the simple max-flow algorithm
+
+Data structures
+    Array: random access
+    List: An ordered collection, can get, add, or remove element at the specific index
+    Priority Queue
+        MinPQ, MaxPQ
+        Implementation: binary heap
+    Binary Tree, Complete Binary Tree, Binary Search Tree (BST), 2-3 Search Tree, 2-3 Tree, Red-Black BST
+    Symbol table: stores key value pairs
+    Set: stores keys, a collection without duplicate keys
+    Disjoint set (union-find): keeps track of a set of elements partitioned into a number of disjoint (non-overlapping) subsets
+    Graph
+    Common operations for each data structure and their implementation
+
+Algorithm Design Techniques
+	Greedy Algorithms, Divide and Conquer, Dynamic Programming, Randomized Algorithms, Backtracking
+	Can associate studied algorithms to design techniques
+
+Complexity classes
+    P, NP, NP-Complete, Undecidable
+    Open question: P=NP?
+
+Note
+    The best way to prepare for the exam is to review class notes as well as related sections in the text books,
+    and redo in-class exercises as well as homework questions.
