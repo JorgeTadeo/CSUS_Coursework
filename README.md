@@ -12,5 +12,5 @@
 # [CSC 139 - Operating System Principles]()
 # [CSC 140 - Advanced Algorithm Design and Analysis]()
 # [CSC 152 - Cryptography]()
-# [CSC 153 - Computer Forensics Principles and Practices]()
+# [CSC 153 - Computer Forensics Principles and Practices](https://github.com/diaoshen/CSUS_Coursework/tree/master/CSC%20153)
 # [CSC 180 - Intelligent Systems]()
