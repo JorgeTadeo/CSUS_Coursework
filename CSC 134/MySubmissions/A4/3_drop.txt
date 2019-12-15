@@ -1,0 +1,13 @@
+CSC134 HW4 - RONGGUANG OU 
+
+
+
+DROP TABLE REWARDS,
+           CUSTOMER_PHONE,
+           CONTRACTOR_PHONE,
+           HIRE,
+           CONTRACTOR,
+           PAINTED,
+           PAINT_COLOR,
+           ROOM,
+           CUSTOMER;

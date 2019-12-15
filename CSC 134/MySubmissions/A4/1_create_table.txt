@@ -1,0 +1,115 @@
+CSC134 HW4 - RONGGUANG OU 
+
+CREATE DATABASE PAINTSTORE
+CHARACTER SET utf8mb4;
+use PAINTSTORE;
+
+create table CUSTOMER(
+  
+    cust_id     INT             NOT NULL,
+    first       VARCHAR(20),
+    last        VARCHAR(20),    
+    street      VARCHAR(20)     NOT NULL,
+    city        VARCHAR(20)     NOT NULL,
+    state       VARCHAR(20)     NOT NULL,
+    zip         INT             NOT NULL,
+    
+    PRIMARY KEY (cust_id),
+    UNIQUE (street,city,state,zip)
+);
+
+create table REWARDS(
+
+    r_id          INT         NOT NULL,
+    points        INT,
+    cust_id       INT,
+    
+    PRIMARY KEY (r_id),
+    FOREIGN KEY (cust_id) REFERENCES CUSTOMER(cust_id)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+);
+
+create table CUSTOMER_PHONE(
+
+    cust_id      INT,
+    phone        VARCHAR(12)      NOT NULL,
+    
+    PRIMARY KEY (phone),
+    FOREIGN KEY (cust_id) REFERENCES CUSTOMER(cust_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+create table CONTRACTOR(
+    
+    bus_name    VARCHAR(20)     NOT NULL,
+    discount    INT,
+    
+    PRIMARY KEY (bus_name)
+);
+
+create table CONTRACTOR_PHONE(
+    
+    bus_name    VARCHAR(20),
+    phone       VARCHAR(12),
+    
+    PRIMARY KEY (phone),
+    FOREIGN KEY (bus_name) REFERENCES CONTRACTOR(bus_name)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+create table HIRE(
+    
+    cust_id     INT,
+    bus_name    VARCHAR(20),
+    hours       FLOAT       CHECK(hours > 0),
+    
+    FOREIGN KEY (cust_id) REFERENCES CUSTOMER(cust_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (bus_name) REFERENCES CONTRACTOR(bus_name)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+create table ROOM(
+    
+    name    VARCHAR(20),
+    cust_id INT,
+    
+    PRIMARY KEY (name),
+    FOREIGN KEY (cust_id) REFERENCES CUSTOMER(cust_id)
+        ON DELETE CASCADE 
+        ON UPDATE CASCADE 
+);
+create table PAINT_COLOR(
+
+    mfg_id      INT,
+    color_id    INT,
+    name        VARCHAR(20),
+    
+    PRIMARY KEY (mfg_id),
+    UNIQUE (color_id)
+);
+create table PAINTED(
+    
+    rm_name     VARCHAR(20),
+    cust_id     INT,
+    mfg_id      INT,
+    color_id    INT,
+    
+    FOREIGN KEY (rm_name) REFERENCES ROOM(name)
+        ON DELETE CASCADE 
+        ON UPDATE CASCADE, 
+    FOREIGN KEY (cust_id) REFERENCES ROOM(cust_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (mfg_id) REFERENCES PAINT_COLOR(mfg_id)
+        ON DELETE CASCADE 
+        ON UPDATE CASCADE,
+    FOREIGN KEY (color_id) REFERENCES PAINT_COLOR(color_id)
+        ON DELETE CASCADE 
+        ON UPDATE CASCADE 
+);
