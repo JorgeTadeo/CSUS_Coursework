@@ -1,0 +1,34 @@
+Chronologic VCS simulator copyright 1991-2014
+Contains Synopsys proprietary information.
+Compiler version I-2014.03-2; Runtime version I-2014.03-2;  Mar 13 19:25 2019
+-------------------------------
+t(ns)| a b ci | co s | w1 w2 w3
+-------------------------------
+   1 | 0 0 0  |  0 0 |  0  1  1
+   2 | 0 0 1  |  0 1 |  0  1  1
+   3 | 0 1 0  |  0 1 |  1  1  1
+   4 | 0 1 1  |  1 0 |  1  0  1
+   5 | 1 0 0  |  0 1 |  1  1  1
+   6 | 1 0 1  |  1 0 |  1  0  1
+   7 | 1 1 0  |  1 0 |  0  1  0
+   8 | 1 1 1  |  1 1 |  0  1  0
+-------------------------------
+---------- Above we used $display staments for each input combination -----------
+ 
+--- Below we used a single $monitor statement to report everytime the input changes---
+----------------------------------------------------
+T(ns)| A B Ci | Co S | W1 W2 W3 inputs go 7 -> 0 now
+----------------------------------------------------
+   8 | 1 1 1  |  1 1 |  0  1  0
+  10 | 1 1 0  |  1 0 |  0  1  0
+  11 | 1 0 1  |  1 0 |  1  0  1
+  12 | 1 0 0  |  0 1 |  1  1  1
+  13 | 0 1 1  |  1 0 |  1  0  1
+  14 | 0 1 0  |  0 1 |  1  1  1
+  15 | 0 0 1  |  0 1 |  0  1  1
+----------------------------------------------------
+  16 | 0 0 0  |  0 0 |  0  1  1
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 16000 ps
+CPU Time:      0.190 seconds;       Data structure size:   0.0Mb
+Wed Mar 13 19:25:01 2019

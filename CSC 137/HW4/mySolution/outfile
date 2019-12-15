@@ -1,0 +1,19 @@
+Chronologic VCS simulator copyright 1991-2014
+Contains Synopsys proprietary information.
+Compiler version I-2014.03-2; Runtime version I-2014.03-2;  Mar 13 19:22 2019
+-----------------------
+|t(ns)| a b ci | co s | 
+-----------------------
+|   1 | 0 0 0  |  0 0 |
+|   2 | 0 0 1  |  0 1 |
+|   3 | 0 1 0  |  0 1 |
+|   4 | 0 1 1  |  1 0 |
+|   5 | 1 0 0  |  0 1 |
+|   6 | 1 0 1  |  1 0 |
+|   7 | 1 1 0  |  1 0 |
+|   8 | 1 1 1  |  1 1 |
+-----------------------
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 8000 ps
+CPU Time:      0.190 seconds;       Data structure size:   0.0Mb
+Wed Mar 13 19:22:30 2019

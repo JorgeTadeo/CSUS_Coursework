@@ -1,0 +1,5 @@
+HW 4 
+RONGGUANG OU
+
+
+w1,w2,w3 is in the second output file because wire variable w1,w2,w3 was declared in full_adder_wires_tb.v and not in the simpler version. Also, function full_adder_wires fa1 was called with w1,w2,w3 as parametersw and the simpler one don't pass in w1,w2,w3 as the parameter.  
