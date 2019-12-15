@@ -4,9 +4,6 @@
 # [CSC 134 - Database Management Systems]()
 # [CSC 133 - Object-Oriented Computer Graphics Programming](https://github.com/diaoshen/CSUS_Coursework/tree/master/CSC%20133)
 # [CSC 135 - Computing Theory and Languages](https://github.com/diaoshen/CSUS_Coursework/tree/master/CSC%20135)
-  * Recognizer 
-  * Scheme 
-  * Prolog
 # [CSC 137 - Computer Organization]()
 # [CSC 138 - Computer Networks and Internets]()
 # [CSC 139 - Operating System Principles](https://github.com/diaoshen/CSUS_Coursework/tree/master/CSC%20139)
