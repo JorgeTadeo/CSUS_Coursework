@@ -1,8 +1,8 @@
 
 # [CSC 130 - Data Structures](https://github.com/diaoshen/CSUS_Coursework/tree/master/CSC%20130)
 # [CSC 131 - Software Engineering](https://github.com/diaoshen/CSUS_Coursework/tree/master/CSC%20131)
-# [CSC 134 - Database Management Systems]()
 # [CSC 133 - Object-Oriented Computer Graphics Programming](https://github.com/diaoshen/CSUS_Coursework/tree/master/CSC%20133)
+# [CSC 134 - Database Management Systems]()
 # [CSC 135 - Computing Theory and Languages](https://github.com/diaoshen/CSUS_Coursework/tree/master/CSC%20135)
 # [CSC 137 - Computer Organization]()
 # [CSC 138 - Computer Networks and Internets]()
